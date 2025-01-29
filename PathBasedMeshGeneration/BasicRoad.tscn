@@ -1,0 +1,36 @@
+[gd_scene load_steps=4 format=3 uid="uid://bk7vpygfoxgwc"]
+
+[ext_resource type="Texture2D" uid="uid://dbt7hyryh7vfl" path="res://Textures/asphalt_texture_8x8_downscale.jpg" id="1_xk482"]
+
+[sub_resource type="Curve3D" id="Curve3D_d70r7"]
+_data = {
+"points": PackedVector3Array(-0.544942, 0, -2.59349, 0.932225, 0, 4.43664, -5.56614, 0, -2.78927, -1.74794, 0, -0.780995, 1.74794, 0, 0.780995, 9.39673, -3.0687, -3.35952, 1.62397, 0, -1.76034, -1.62397, 0, 1.76034, 10.686, -3.0687, 4.09093, 5.45457, 0, -0.917358, -5.45457, 0, 0.917358, 3.19836, 0, 9.26037, 1.79753, 0, 1.5372, -1.79753, 0, -1.5372, -6.18598, 0.691811, 6.8554, 0.0495872, 0, 2.46695, -0.0495872, 0, -2.46695, -11.4794, 0, -0.979343, -3.18596, 0, 0.359506, 1.27603, 0, -0.143987, -8.7397, 0.691811, -7.31408, -0.455009, 0, -2.03301, 0.774423, 0, 3.46017, -5.56614, 0, -2.78927),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 8
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8hnqx"]
+albedo_texture = ExtResource("1_xk482")
+texture_filter = 1
+grow_amount = -2.035
+point_size = 0.1
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Path3D" type="Path3D" parent="."]
+curve = SubResource("Curve3D_d70r7")
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Path3D"]
+use_collision = true
+polygon = PackedVector2Array(-1, 0, -1, 0.1, 1, 0.1, 1, 0)
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.0
+path_rotation = 2
+path_local = false
+path_continuous_u = true
+path_u_distance = 30.0
+path_joined = true
+material = SubResource("StandardMaterial3D_8hnqx")
