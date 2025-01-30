@@ -5,9 +5,9 @@ noise_type = 0
 seed = 13
 frequency = 0.03
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_cpp73"]
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_snfgv"]
 noise = SubResource("FastNoiseLite_1r47r")
 
 [resource]
 albedo_color = Color(0.33, 0.25839, 0.1254, 1)
-roughness_texture = SubResource("NoiseTexture2D_cpp73")
+albedo_texture = SubResource("NoiseTexture2D_snfgv")
